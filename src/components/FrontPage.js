@@ -1,5 +1,6 @@
 import React from 'react';
 import { gradSweCommittee } from '../committee.js';
+import AppBar from 'material-ui/AppBar';
 import {Card, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import '../css/flexboxgrid.css';
 import '../css/material-icons.css';
@@ -12,6 +13,9 @@ var FrontPage = React.createClass({
 	render: function() {
 		return (
 			<div>
+				<AppBar
+					title="GradSWE@UIUC"
+				/>
 				<Header />
 				<About />
 				<Committee />

@@ -44,11 +44,11 @@ body {
 }
 
 #section-intro {
-	background: linear-gradient(rgba(0, 0, 0, 0.5),
-							rgba(0, 0, 0, 0.5)),
+	background: linear-gradient(rgba(255, 255, 255, 0.45),
+							rgba(255, 255, 255, 0.45)),
 							url('../images/heels.jpg') no-repeat center fixed;
 	background-size: cover;
-	color: rgba(255,255,255,0.6);
+	color: rgba(0,0,0,0.45);
 }
 
 

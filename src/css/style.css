@@ -1,0 +1,144 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto';
+
+
+body {
+	margin: 0;
+	padding: 0;
+	max-width: 100vw;
+	min-width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 90%;
+}
+
+.no-pad {
+	padding: 0 !important;
+}
+
+.section {
+	max-width: 100vw;
+	min-width: 100vw;
+	min-height: 100vh;
+}
+
+
+#mainMenu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 999;
+	background-color: transparent;
+	transition: all 0.2s ease-in-out
+}
+
+#mainMenu.scrolled {
+	background-color: rgba(0,0,0,0.9);
+}
+
+#section-intro {
+	background: linear-gradient(rgba(0, 0, 0, 0.5),
+							rgba(0, 0, 0, 0.5)),
+							url('../images/heels.jpg') no-repeat center fixed;
+	background-size: cover;
+	color: rgba(255,255,255,0.6);
+}
+
+
+
+#section-contact {
+	background-color: rgba(0,0,0,1);
+}
+
+#pageLoader {
+    position: fixed;
+    width: 100vw; height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+}
+
+#pageLoader .preloader-wrapper {
+	left: 50%;
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+
+@media only screen and (min-width: 0) {
+	.title-intro {
+		font-size: 1.2rem;
+	}
+	.subtitle-intro {
+		padding-bottom: 1rem;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+	.verticalign {
+		position: middle;
+		transform: translateY(25%);
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.title-intro {
+		font-size: 1.5rem;
+	}
+	.subtitle-intro {
+		padding-bottom: 3.5rem;
+		font-size: 1.8rem;
+		line-height: 4rem;
+	}
+	.verticalign {
+		transform: translateY(50%);
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.title-intro {
+		font-size: 2rem;
+	}
+	.subtitle-intro {
+		padding-bottom: 5rem;
+		font-size: 2rem;
+		line-height: 4rem;
+	}
+	.verticalign {
+		transform: translateY(50%);
+	}
+}
+
+
+.title-intro {
+	letter-spacing: 0.3rem;
+	text-transform: uppercase;
+}
+.subtitle-intro {
+	font-variant: small-caps;
+	color: rgba(255,255,255,0.6);
+}
+
+.tabs .tab a {
+	color: rgba(255,255,255,0.87);
+}
+
+.tabs .tab a:hover {
+  color: rgba(255,255,255,0.5);
+}
+
+.tabs .indicator {
+	background-color: rgba(255,255,255,0.87);
+}
+
+footer.page-footer {
+	background-color: rgba(0,0,0,1);
+}

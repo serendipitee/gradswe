@@ -64,13 +64,13 @@ Find a folder where you'd like to download the project folder to:
 
 Once that's done, run:
 
-### 'npm install'
+### `npm install`
 
 This will install all the dependencies listed in package.json in a folder called 'node_modules'.
 
 Now you should be good to start developing. Run:
 
-### 'npm start'
+### `npm start`
 
 Then when your development server is up, point your browser to 'https://localhost:3000'. Your browser will live reload whenever there are changes to the source files, so no need to stop and restart your server.
 
@@ -80,7 +80,7 @@ Then when your development server is up, point your browser to 'https://localhos
 * Option 1: Manual
 When you are ready to deploy your project to the production server (cPanel), run:
 
-### 'npm run build'
+### `npm run build`
 
 This will create a build folder. Upload this folder to cPanel's file manager.
 
@@ -90,10 +90,10 @@ You will need to ssh in. For Mac/Linux, make sure you have ssh installed. For Wi
 https://it.engineering.illinois.edu/user-guides/serviceswebsite-services/linux-based-hosting-cpanel
 
 Run:
-### 'ssh netid@web.engr.illinois.edu' or 'ssh netid@130.126.112.114'
+### `ssh netid@web.engr.illinois.edu` or `ssh netid@130.126.112.114`
 
 Then enter:
-### 'sudo -i -u gradsweil'
+### `sudo -i -u gradsweil`
 
 When asked for a password, type in your netid password. You should now have access to the files in the home directory of gradsweil.
 
@@ -101,14 +101,14 @@ Unfortunately, since we are at the mercy of Illinoi's Engineering IT, we do not 
 
 * Install NVM (https://github.com/creationix/nvm)
 Run:
-### 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash'
+### `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash`
 
 Then:
-### 'export NVM_DIR="$HOME/.nvm"'
-### '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+### `export NVM_DIR="$HOME/.nvm"`
+### `[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"`
 
 To make sure things installed correctly:
-### 'command -v nvm' or 'nvm --version'
+### `command -v nvm` or `nvm --version`
 
 This should return nvm or its version number.
 
@@ -116,21 +116,21 @@ This should return nvm or its version number.
 We installed NVM for the sole purpose of installing Node js. What we really need is Node js (and npm).
 
 Run:
-### 'nvm install node'
+### `nvm install node`
 
 This will install Node js, but v6. We want v4.
 
-### 'nvm install v4.5'
-### 'nvm use v4.5'
+### `nvm install v4.5`
+### `nvm use v4.5`
 
 This will switch us over to Node js v4 and its corresponding npm js version. However, we want the latest version of npm. Run:
 
-### 'npm install -g npm'
+### `npm install -g npm`
 
 Double check you have the right versions:
 
-### 'node --version'
-### 'npm --version'
+### `node --version`
+### `npm --version`
 
 Now we're ready. If the project is not in cPanel, clone the repository here. Now do all that same as above.
 

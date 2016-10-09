@@ -1,9 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Below you will find some information on how to perform common tasks.  
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
 
 ## Table of Contents
+
+- [Testing](#testing)
+- [Deploying](#deploying)
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
@@ -49,6 +51,93 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [Now](#now)
   - [Surge](#surge)
 - [Something Missing?](#something-missing)
+
+## Testing
+
+You will need to install the following:
+* node js (v4 not v6!)...this will also come with npm (upgrade to v3.6 something)
+* GitHub account with access to the repository
+
+Find a folder where you'd like to download the project folder to:
+
+### `git clone https://github.com/serendipitee/gradswe.git`
+
+Once that's done, run:
+
+### 'npm install'
+
+This will install all the dependencies listed in package.json in a folder called 'node_modules'.
+
+Now you should be good to start developing. Run:
+
+### 'npm start'
+
+Then when your development server is up, point your browser to 'https://localhost:3000'. Your browser will live reload whenever there are changes to the source files, so no need to stop and restart your server.
+
+
+## Deploying
+
+* Option 1: Manual
+When you are ready to deploy your project to the production server (cPanel), run:
+
+### 'npm run build'
+
+This will create a build folder. Upload this folder to cPanel's file manager.
+
+* Option 2: Automatic
+You will need to ssh in. For Mac/Linux, make sure you have ssh installed. For Windows, use Putty (https://my.bluehost.com/cgi/help/putty).
+
+https://it.engineering.illinois.edu/user-guides/serviceswebsite-services/linux-based-hosting-cpanel
+
+Run:
+### 'ssh netid@web.engr.illinois.edu' or 'ssh netid@130.126.112.114'
+
+Then enter:
+### 'sudo -i -u gradsweil'
+
+When asked for a password, type in your netid password. You should now have access to the files in the home directory of gradsweil.
+
+Unfortunately, since we are at the mercy of Illinoi's Engineering IT, we do not have sudo/root access to install things. But I am sneaky. I have taken care of all this setup, but I will document how to set up something like this from a clean account.
+
+* Install NVM (https://github.com/creationix/nvm)
+Run:
+### 'curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash'
+
+Then:
+### 'export NVM_DIR="$HOME/.nvm"'
+### '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
+
+To make sure things installed correctly:
+### 'command -v nvm' or 'nvm --version'
+
+This should return nvm or its version number.
+
+* Install Node js (v4 not v6)
+We installed NVM for the sole purpose of installing Node js. What we really need is Node js (and npm).
+
+Run:
+### 'nvm install node'
+
+This will install Node js, but v6. We want v4.
+
+### 'nvm install v4.5'
+### 'nvm use v4.5'
+
+This will switch us over to Node js v4 and its corresponding npm js version. However, we want the latest version of npm. Run:
+
+### 'npm install -g npm'
+
+Double check you have the right versions:
+
+### 'node --version'
+### 'npm --version'
+
+Now we're ready. If the project is not in cPanel, clone the repository here. Now do all that same as above.
+
+Need to figure out how to automate this part....
+
+
+
 
 ## Updating to New Releases
 

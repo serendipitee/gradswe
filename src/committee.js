@@ -6,7 +6,7 @@ export var gradSweCommittee = [
 		year: "3rd Year PhD",
 		major: "Electrical Engineering",
 		title: "GradSWE Director",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/cklauber.jpg"
 	},
 	{
 		id: 2,
@@ -15,7 +15,7 @@ export var gradSweCommittee = [
 		year: "4th Year PhD",
 		major: "Chemical & Biomolecular Engineering",
 		title: "weSTEM Director",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/mwitzke.jpg"
 	},
 	{
 		id: 3,
@@ -24,7 +24,7 @@ export var gradSweCommittee = [
 		year: "2nd Year PhD",
 		major: "Theoretical and Applied Mechanics",
 		title: "weSTEM Attendee Relations Coordinator",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/lstekovic.jpg"
 	},
 	{
 		id: 4,
@@ -33,7 +33,7 @@ export var gradSweCommittee = [
 		year: "3rd Year PhD",
 		major: "Chemical & Biomolecular Engineering",
 		title: "Treasurer & weSTEM Logistics Coordinator",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/kdahlke.jpg"
 	},
 	{
 		id: 5,
@@ -42,7 +42,7 @@ export var gradSweCommittee = [
 		year: "2nd Year Master's",
 		major: "Mechanical Science & Engineering",
 		title: "GradSWE Speaker Coordinator",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/mkawamura.jpg"
 	},
 	{
 		id: 6,
@@ -51,7 +51,7 @@ export var gradSweCommittee = [
 		year: "2nd Year Master's",
 		major: "Mechanical Science & Engineering",
 		title: "weSTEM Speaker & Funding Coordinator",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/aarmstrong.jpg"
 	},
 	{
 		id: 7,
@@ -60,7 +60,7 @@ export var gradSweCommittee = [
 		year: "5th Year PhD",
 		major: "Computer Science",
 		title: "Secretary & Website Manager",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/alai.jpg"
 	},
 	{
 		id: 8,
@@ -69,7 +69,7 @@ export var gradSweCommittee = [
 		year: "3rd Year PhD",
 		major: "Civil & Environmental Engineering",
 		title: "SWE Liaison",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/syoung.jpg"
 	},
 	{
 		id: 9,
@@ -78,7 +78,7 @@ export var gradSweCommittee = [
 		year: "3rd Year PhD",
 		major: "Physics",
 		title: "Social Director",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/mvictoria.png"
 	},
 	{
 		id: 10,
@@ -87,7 +87,7 @@ export var gradSweCommittee = [
 		year: "4th Year PhD",
 		major: "Computer Science",
 		title: "Publicity Coordinator",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/emolloy.jpg"
 	},
 	{
 		id: 11,
@@ -96,7 +96,7 @@ export var gradSweCommittee = [
 		year: "1st Year Master's",
 		major: "Mechanical Engineering",
 		title: "Graphic Designer",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/csandin.jpg"
 	},
 	{
 		id: 12,
@@ -105,16 +105,7 @@ export var gradSweCommittee = [
 		year: "2nd Year Master's",
 		major: "Aerospace Engineering",
 		title: "Social Media",
-		src: "../images/committee/sstang.jpg"
-	},
-	{
-		id: 13,
-		name: "Sharon Tang",
-		email: "sstang3@illinois.eduu",
-		year: "1st Year Master's",
-		major: "Electrical & Computer Engineering",
-		title: "Webmaster",
-		src: "../images/committee/sstang.jpg"
+		src: "../images/committee/ewroblewski.jpg"
 	}
 
 ];

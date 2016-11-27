@@ -39,6 +39,7 @@ var NavigationTop = React.createClass({
 			<AppBar
 				title="GradSWE@UIUC"
 				style={{"position":"fixed"}}
+				iconElementLeft={<b></b>}
 				iconElementRight={appTabs}
 				onTitleTouchTap={this.handleTouchTap}
 			>
@@ -96,7 +97,7 @@ var About = React.createClass({
 							<div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><h2><FaFemale/></h2>weSTEM Conference</div>
 							<div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><h2><FaPlug/></h2>Professional Workshops</div>
 							<div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><h2><FaGroup/></h2>Undergraduate Mentoring</div>
-							<div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><h2><FaBeer/></h2>Happy Hours</div>
+							<div className="col-xs-12 col-sm-6 col-md-3 col-lg-3"><h2><FaBeer/></h2>Socials</div>
 						</div>
 					</div>
 				</div>
@@ -152,10 +153,7 @@ var MemberCard = React.createClass({
 			<div className="back">
 				<CardTitle title={this.props.data.email} subtitle={yearMajor} />
 				<CardText>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-				Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-				Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-				Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+				{this.props.data.about}
 				</CardText>
 			</div>
 			</Paper>

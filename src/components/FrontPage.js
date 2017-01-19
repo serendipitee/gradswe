@@ -69,11 +69,13 @@ var FrontPage = React.createClass({
 var Header = React.createClass({
 	render: function () {
 		return (
-			<div id="section-intro" className="section row middle-xs">
+			<div id="section-intro" className="section">
+				<div className="row middle-xs">
 					<div className="col-xs-offset-1 col-xs-8 col-sm-7 col-md-6 col-lg-5">
 					<h1 style={{"textTransform":"uppercase"}}>Graduate Society of Women Engineers</h1>
 					<h5 className="col-xs-9 no-pad">Promoting diversity and empowering women at the frontiers of science and engineering. Join us at the University of Illinois at Urbana-Champaign.</h5>
 					</div>
+				</div>
 			</div>
 		);
 	}
@@ -186,7 +188,7 @@ var Committee = React.createClass({
 			<div id="section-committee" className="section no-pad-top">
 
 				<div className="banner row middle-xs center-xs">
-					<div className="col-xs-12"><h1>Our Committee</h1></div>
+					<div className="row middle-xs center-xs"><div className="col-xs-12"><h1>Our Committee</h1></div></div>
 				</div>
 
 				<div className="container">
@@ -247,7 +249,7 @@ var Sponsors = React.createClass({
 		return (
 			<div id="section-sponsors" className="section no-pad">
 				<div className="banner2 row middle-xs center-xs">
-					<div className="col-xs-12"><h1>Thank you to our sponsors</h1></div>
+					<div className="row middle-xs center-xs"><div className="col-xs-12"><h1>Thank you to our sponsors</h1></div></div>
 				</div>
 				<div className="container">
 				<div className="row"><h5 style={{"textTransform":"uppercase"}}>Corporate Sponsors</h5></div>
@@ -267,7 +269,7 @@ var Sponsors = React.createClass({
 
 				</div>
 
-				<div className="banner3 row middle-xs">
+				<div className="banner3">
 
 					<div className="container">
 						<div className="row center-xs start-sm">
@@ -275,7 +277,7 @@ var Sponsors = React.createClass({
 						</div>
 						<div className="row center-xs start-sm">
 							<div className="col-xs-10 col-sm-6 col-md-5 col-lg-5 start-sm">
-								<p>Help us grow our community and continue to support women in STEM by becoming a GradSWE sponsor! Contact us at <b>weSTEMcorporate@gmail.com</b> to learn more about sponsorship levels and the benefits of sponsoring GradSWE.</p>
+								<p>Help us grow our community and continue to support women in STEM by becoming a GradSWE sponsor! Contact us at <b>gradswe-funding@illinois.edu</b> to learn more about sponsorship levels and the benefits of sponsoring GradSWE.</p>
 							</div>
 						</div>
 					</div>

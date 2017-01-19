@@ -118,6 +118,16 @@ export var gradSweCommittee = [
 		title: "Social Media",
 		src: "../images/committee/ewroblewski.jpg",
 		about: "Elle is an Aerospace Engineering M.S. student working in the field of experimental aerodynamics. She received her B.S. in Aerospace Engineering here at the University of Illinois in 2014. She considers herself a feminist, and loves cats, colors, crafts, cartoons, and fiction novels."
+	},
+	{
+		id: 13,
+		name: "Sharon Tang",
+		email: "sstang3@illinois.edu",
+		year: "1st Year Master's",
+		major: "Electrical and Computer Engineering",
+		title: "Web Developer",
+		src: "../images/committee/sstang.jpg",
+		about: "Sharon is an Electrical and Computer Engineering M.S. student, interested in mobile computing and mobile sensing. She also attended Illinois for her undergrad, receiving her B.S. in Computer Engineering."
 	}
 
 ];

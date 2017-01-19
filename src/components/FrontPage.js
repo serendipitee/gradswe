@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactScroll from 'react-scroll';
 import AppBar from 'material-ui/AppBar';
-import Paper from 'material-ui/Paper';
+// import Paper from 'material-ui/Paper';
 import {CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
 import {FaTwitterSquare, FaFacebookSquare, FaInstagram, FaBriefcase, FaHashtag, FaGroup, FaPlug, FaGlobe} from 'react-icons/lib/fa';
 import '../css/flexboxgrid.css';
 import "../css/style.css";
 import { gradSweCommittee } from '../committee.js';
+import { gradSweSponsors } from '../sponsors.js';
+
 
 
 var Link		= ReactScroll.Link;
@@ -139,39 +142,41 @@ var About = React.createClass({
 
 
 var MemberCard = React.createClass({
+
 	getInitialState: function() {
 		return {
-			face: 'card unflipped'
+			open: false
 		};
 	},
-	handleClick: function() {
-		this.classList.toggle('hover');
+	handleOpen: function() {
+		this.setState({open: true});
 	},
+
+	handleClose: function() {
+		this.setState({open: false});
+	},
+
 	render: function() {
 		var yearMajor = this.props.data.year+" in "+this.props.data.major;
-		return (
-			<div className="flip-container" onTouchStart={this.handleClick}>
 
-			<div className="flipper">
-			<Paper zDepth={3}>
-			<div className="front">
+		return (
+			<div>
 				<CardMedia
+				onTouchTap={this.handleOpen}
 				overlay={<CardTitle title={this.props.data.name} subtitle={this.props.data.title} />}
 				>
 				<img src={this.props.data.src} alt={this.props.data.name} />
 				</CardMedia>
-			</div>
-			<div className="back">
-				<CardTitle title={this.props.data.email} subtitle={yearMajor} />
-				<CardText>
-				{this.props.data.about}
-				</CardText>
-			</div>
-			</Paper>
-			</div>
+				<Dialog
+				title={<CardTitle title={this.props.data.email} subtitle={yearMajor} />}
+				modal={false}
+				open={this.state.open}
+				onRequestClose={this.handleClose}>
+					<CardText>{this.props.data.about}</CardText>
+				</Dialog>
 			</div>
 		);
-	}
+  	}
 });
 
 var Committee = React.createClass({
@@ -187,10 +192,10 @@ var Committee = React.createClass({
 				<div className="container">
 
 					<div className="row center-xs">
-						<div className="col-xs-12 col-sm-6 col-md-4 no-pad start-xs">
+						<div className="col-xs-12 col-sm-6 col-md-3 no-pad start-xs">
 							<MemberCard key={gradSweCommittee[0].id} data={gradSweCommittee[0]}/>
 						</div>
-						<div className="col-xs-12 col-sm-6 col-md-4 no-pad start-xs">
+						<div className="col-xs-12 col-sm-6 col-md-3 no-pad start-xs">
 							<MemberCard key={gradSweCommittee[1].id} data={gradSweCommittee[1]}/>
 						</div>
 					</div>
@@ -198,7 +203,7 @@ var Committee = React.createClass({
 					<div className="row">
 						{gradSweCommittee.map(function(member) {
 							if(member.id>2) {
-							return 	<div className="col-xs-12 col-sm-6 col-md-4 col-lg-3 no-pad" key={member.id} ><MemberCard key={member.id} data={member}/></div>
+							return 	<div className="col-xs-12 col-sm-4 col-md-3 no-pad" key={member.id} ><MemberCard key={member.id} data={member}/></div>
 							}
 							return ""
 						})}
@@ -210,6 +215,33 @@ var Committee = React.createClass({
 	}
 });
 
+
+
+var CorpSponsorsByLevel = React.createClass({
+	render: function () {
+		return (
+			<div className="row middle-xs">
+				{this.props.data.map(function(sponsor) {
+					return 	<div className="col-xs-12 col-sm-3" key={sponsor.src}><img src={sponsor.src} alt={sponsor.name} style={{"maxHeight":"25vh", "maxWidth":"100%"}} /></div>
+				})}
+			</div>
+		);
+	}
+});
+
+var IlliniSponsorsByLevel = React.createClass({
+	render: function () {
+		return (
+			<div className="row no-pad">
+				{this.props.data.map(function(sponsor) {
+					return 	<div className="col-xs-12 col-sm-3" key={sponsor.src}><small><a href={sponsor.src} target="_blank">{sponsor.name}</a></small></div>
+				})}
+			</div>
+		);
+	}
+});
+
+
 var Sponsors = React.createClass({
 	render: function () {
 		return (
@@ -218,50 +250,20 @@ var Sponsors = React.createClass({
 					<div className="col-xs-12"><h1>Thank you to our sponsors</h1></div>
 				</div>
 				<div className="container">
-					<div className="row">
-						<div className="col-xs-2"><h6>Platinum</h6></div>
-						<div className="col-xs-10 row middle-xs">
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/coe.png" alt="College of Engineering at Illinois" style={{"width":"100%"}} /></div>
-						</div>
-					</div>
-
-					<div className="row">
-						<div className="col-xs-2"><h6>Gold</h6></div>
-						<div className="col-xs-10 row middle-xs">
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/cee.png" alt="Civil and Environmental Engineering at Illinois" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/mechse.png" alt="Mechanical Science and Engineering at Illinois" style={{"width":"100%"}} /></div>
-						</div>
-					</div>
+				<div className="row"><h5 style={{"textTransform":"uppercase"}}>Corporate Sponsors</h5></div>
+				{
+					Object.keys(gradSweSponsors[0]).map(function(key) {
+						return 	<div key={key}><div className="row"><p style={{"textTransform":"capitalize"}}>{key}</p></div><CorpSponsorsByLevel data={gradSweSponsors[0][key]}/></div>
+					})
+				}
+				<div className="row"><h5 style={{"textTransform":"uppercase"}}>Illinois Sponsors</h5></div>
+				{
+					Object.keys(gradSweSponsors[1]).map(function(key) {
+						return 	<div key={key}><div className="row"><p style={{"textTransform":"capitalize"}}>{key}</p></div><IlliniSponsorsByLevel data={gradSweSponsors[1][key]}/></div>
+					})
+				}
 
 
-					<div className="row">
-						<div className="col-xs-2"><h6>Silver</h6></div>
-						<div className="col-xs-10 row middle-xs">
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/Caterpillar-logo_scale.jpg" alt="Caterpillar"  style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/AgBio_scale.png" alt="Agricultural and Biological Engineering at Illinois" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/bioe.png" alt="Bioengineering" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/chbiomolecular.png" alt="Chemical and Biomolecular Engineering at Illinois" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/chem.png" alt="Chemistry" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/matsci.png" alt="Material Science" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/chemicalsci.png" alt="School of Chemical Sciences" style={{"width":"100%"}} /></div>
-						</div>
-					</div>
-
-					<div className="row">
-						<div className="col-xs-2"><h6>Bronze</h6></div>
-						<div className="col-xs-10 row middle-xs">
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/beckman.jpg" alt="Beckman Institute" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/igb.jpg" alt="Carl R. Woese Institute for Genomic Biology" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/biophysics.jpg" alt="Center for Biophysics & Quantitative Biology" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/csl.jpg" alt="Coordinated Science Laboratory" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/atmos.jpg" alt="Atmospheric Sciences" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/ent.jpg" alt="Entomology" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/ise.png" alt="Industrial and Enterprise Systems Engineering at Illinois" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/nres.jpg" alt="Department of Natural Resources & Environmental Science" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/ihsi.png" alt="Interdisciplinary Health Sciences Initiative at Illinois" style={{"width":"100%"}} /></div>
-							<div className="col-xs-12 col-sm-4"><img src="../images/sponsors/energysys.jpg" alt="Master of Engineering in Energy Systems" style={{"width":"100%"}} /></div>
-						</div>
-					</div>
 
 				</div>
 

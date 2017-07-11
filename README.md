@@ -55,20 +55,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Testing
 
 You will need to install the following:
-* node js (v4 not v6!)...this will also come with npm (upgrade to v3.6 something)
-* GitHub account with access to the repository
+* git
+* node js (v4 not v6! https://nodejs.org/en/blog/release/v4.8.4/ ) ... this will also come with npm 
+* update npm with ###`npm install npm@latest -g`
 
 Find a folder where you'd like to download the project folder to:
 
 ### `git clone https://github.com/serendipitee/gradswe.git`
 
-Once that's done, run:
+Once that's done, navigate to the root folder and run:
 
 ### `npm install`
 
 This will install all the dependencies listed in package.json in a folder called 'node_modules'.
 
-Now you should be good to start developing. Run:
+Now you should be good to start developing. Run in the root folder:
 
 ### `npm start`
 
@@ -78,7 +79,7 @@ Then when your development server is up, point your browser to 'https://localhos
 ## Deploying
 
 * Option 1: Manual
-When you are ready to deploy your project to the production server (cPanel), run:
+When you are ready to deploy your project to the production server (cPanel), run in the root folder:
 
 ### `npm run build`
 
